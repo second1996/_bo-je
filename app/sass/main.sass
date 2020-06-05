@@ -713,6 +713,9 @@
 // PAGE: Location
 // ----------------------------------------------------
 .location
+	display: flex
+	align-items: center
+	justify-content: center
 	min-height: 100%
 	background: $light-gray url('../images/dest/lines-pattern.svg') no-repeat center/cover
 	text-align: center
@@ -720,13 +723,20 @@
 		display: flex
 		flex-direction: column
 		align-items: center
-		padding: 100px 0
+		padding: 75px 0
 	&-logo
 		margin-bottom: 75px
 		> img
 			height: 80px
+		+media-breakpoint-down(xs)
+			margin-bottom: 50px
+			> img
+				height: 60px
 	&-title
 		margin-bottom: 75px
+		+media-breakpoint-down(xs)
+			margin-bottom: 50px
+			font-size: 24px
 	&-list
 		display: flex
 		flex-direction: column
@@ -752,3 +762,63 @@
 					cursor: pointer
 					&::after
 						opacity: 1
+
+
+// ----------------------------------------------------
+// Error 404
+// ----------------------------------------------------
+.not-found
+	display: flex
+	align-items: center
+	justify-content: center
+	min-height: 100%
+	background: $dark-blue url('../images/dest/lines-pattern.svg') no-repeat center/cover
+	text-align: center
+	&-wrap
+		display: flex
+		flex-direction: column
+		align-items: center
+		padding: 75px 0
+	&-title
+		margin-bottom: 75px
+		color: $white
+		font-size: 160px
+		+media-breakpoint-down(xl)
+			font-size: 140px
+		+media-breakpoint-down(lg)
+			font-size: 120px
+		+media-breakpoint-down(sm)
+			font-size: 100px
+		+media-breakpoint-down(xs)
+			margin-bottom: 50px
+			font-size: 80px
+		> span
+			display: block
+			font-size: 30px
+			+media-breakpoint-down(md)
+				font-size: 26px
+			+media-breakpoint-down(sm)
+				font-size: 22px
+	&-btn
+		margin-bottom: 75px
+		+media-breakpoint-down(xs)
+			margin-bottom: 50px
+	&-social
+		display: flex
+		align-items: center
+		&-item
+			&:not(:first-child)
+				margin-left: 50px
+				+media-breakpoint-down(xs)
+					margin-left: 30px
+		&-link
+			display: inline-block
+			padding: 0 2px
+			opacity: 1
+			transition: .35s ease
+			+media-breakpoint-down(xs)
+				padding: 5px 2px
+			&:hover
+				opacity: 0.5
+
+
