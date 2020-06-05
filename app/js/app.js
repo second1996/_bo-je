@@ -105,25 +105,4 @@ $(document).ready(function() {
 		})
 	}
 
-	/**
-	 * LocalStorage for Choose Location
-	 */
-	const visitorLocation = $('#visitor-location')
-	let selectedLocation = localStorage.getItem('location')
-	const locationList = $('.location-list > li')
-	
-	// localStorage.setItem('location')
-	// visitorLocation.text(`Ви обрали країну: ${selectedLocation}`)
-	visitorLocation.text(selectedLocation)
-
-	locationList.on('click', function() {
-		let id = $(this).data('location')
-
-		console.log(id)
-
-		localStorage.setItem('location', id)
-		visitorLocation.text(selectedLocation)
-	})
-
-
 })

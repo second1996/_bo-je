@@ -17,22 +17,23 @@
 
 <body>
 
-	<div class="container">
 
-		<div class="location">
-			<div class="location-selected">
-				<p>Ви обрали країну: <span id="visitor-location"></span></p>
+	<section class="location">
+		<div class="location-wrap">
+			<div class="location-logo">
+				<img src="images/dest/logo.svg" alt="BO&bull;JE">
 			</div>
+			<div class="location-title text-xl w-semibold">оберіть свою країну</div>
 			<ul class="location-list">
-				<li data-location="Denmark">Danmark / Denmark</li>
-				<li data-location="Ukraine">Україна / Ukraine</li>
-				<li data-location="English">Another country</li>
+				<li><span class="text-sm" data-lang="da-DK">Danmark / Denmark</span></li>
+				<li><span class="text-sm" data-lang="uk">Україна / Ukraine</span></li>
+				<li><span class="text-sm" data-lang="en-US">Another country</span></li>
 			</ul>
 		</div>
-
-	</div>
+	</section>
 
 	<script src="js/app.min.js"></script>
+	<script src="js/location.js"></script>
 
 </body>
 </html>
