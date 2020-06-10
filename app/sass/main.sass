@@ -385,75 +385,10 @@
 
 
 // ----------------------------------------------------
-// Card of goods
-// ----------------------------------------------------
-.card
-	overflow: hidden
-	height: 100%
-	margin-bottom: 30px
-	&-link
-		position: absolute
-		top: 0
-		left: 0
-		z-index: 1
-		width: 100%
-		height: 100%
-		&:hover
-			~ .card-photo
-				.normal-photo
-					visibility: hidden
-					opacity: 0
-				.scaled-photo
-					visibility: visible
-					opacity: 1
-			~ .card-meta .title > span::after
-				opacity: 1
-	&-photo
-		position: relative
-		overflow: hidden
-		width: 100%
-		height: 260px
-		+media-breakpoint-down(md)
-			height: 220px
-		+media-breakpoint-down(sm)
-			height: 200px
-		img
-			width: 100%
-			height: 100%
-			object-fit: contain
-		.normal-photo,
-		.scaled-photo
-			position: absolute
-			top: 0
-			left: 0
-			transition: 0.4s ease
-		.scaled-photo
-			visibility: hidden
-			opacity: 0
-	&-meta
-		margin-top: 20px
-		.title
-			color: $textcolor
-			> span
-				position: relative
-				&::after
-					content: ''
-					position: absolute
-					left: 0
-					bottom: 0
-					display: inline-block
-					width: 100%
-					height: 1px
-					background: $dark
-					opacity: 0
-					transition: opacity .35s ease
-
-
-// ----------------------------------------------------
 // SECTION: Services
 // ----------------------------------------------------
 .services
-	.row:nth-child(2)
+	.row:not(:first-child)
 		margin-top: 30px
 	.section-head
 		text-align: left
@@ -490,6 +425,22 @@
 				font-size: 24px
 				font-weight: 500
 				line-height: 1
+	&-form
+		display: flex
+		align-items: center
+		justify-content: space-between
+		padding: 25px 6vw
+		background: $light-gray
+		+media-breakpoint-down(sm)
+			flex-direction: column
+		.title
+			margin-bottom: 0
+			padding-right: 15px
+			+media-breakpoint-down(sm)
+				margin-bottom: 20px
+				padding-right: 0
+				line-height: 1.4
+				text-align: center
 
 
 // ----------------------------------------------------
@@ -782,9 +733,9 @@
 				+media-breakpoint-down(md)
 					background-color: $trsp
 		.slick-prev
-			left: -35px
+			left: 0
 		.slick-next
-			right: -35px
+			right: 0
 			transform: rotate(180deg)
 		.slick-disabled
 			opacity: 0
@@ -836,6 +787,131 @@
 				width: 100%
 				height: 100%
 				object-fit: contain
+
+
+// ----------------------------------------------------
+// PAGE: Collection
+// ----------------------------------------------------
+.s-collection
+	padding: 100px 0
+	+media-breakpoint-down(lg)
+		padding: 75px 0
+	+media-breakpoint-down(md)
+		padding: 50px 0
+	.c-heroes
+		&-title
+			margin-bottom: 100px
+			text-align: center
+			text-transform: uppercase
+			+media-breakpoint-down(xl)
+				margin-bottom: 50px
+			> span
+				font-weight: 500
+		&-descr
+			max-width: 820px
+			margin: 0 auto 100px
+			text-align: center
+			+media-breakpoint-down(lg)
+				margin-bottom: 75px
+			+media-breakpoint-down(md)
+				margin-bottom: 50px
+		&-images
+			display: flex
+			width: 100%
+			+media-breakpoint-down(sm)
+				flex-wrap: wrap
+			.image
+				height: 490px
+				+media-breakpoint-down(lg)
+					height: 420px
+				+media-breakpoint-down(md)
+					height: 360px
+				+media-breakpoint-down(sm)
+					height: 320px
+				+media-breakpoint-down(xs)
+					height: 280px
+				&:nth-child(1)
+					width: 40%
+					margin-right: 20px
+					+media-breakpoint-down(sm)
+						width: 100%
+						margin-right: 0
+						margin-bottom: 20px
+				&:nth-child(2)
+					width: 60%
+					+media-breakpoint-down(sm)
+						width: 100%
+				> img
+					width: 100%
+					height: 100%
+					object-fit: cover
+
+
+// ----------------------------------------------------
+// Card of goods
+// ----------------------------------------------------
+.card
+	overflow: hidden
+	height: 100%
+	margin-bottom: 30px
+	&-link
+		position: absolute
+		top: 0
+		left: 0
+		z-index: 1
+		width: 100%
+		height: 100%
+		&:hover
+			~ .card-photo
+				.normal-photo
+					visibility: hidden
+					opacity: 0
+				.scaled-photo
+					visibility: visible
+					opacity: 1
+			~ .card-meta .title > span::after
+				opacity: 1
+	&-photo
+		position: relative
+		overflow: hidden
+		width: 100%
+		height: 260px
+		+media-breakpoint-down(md)
+			height: 220px
+		+media-breakpoint-down(sm)
+			height: 200px
+		img
+			width: 100%
+			height: 100%
+			object-fit: contain
+		.normal-photo,
+		.scaled-photo
+			position: absolute
+			top: 0
+			left: 0
+			transition: 0.4s ease
+		.scaled-photo
+			visibility: hidden
+			opacity: 0
+	&-meta
+		margin-top: 20px
+		+media-breakpoint-down(xs)
+			text-align: center
+		.title
+			color: $textcolor
+			> span
+				position: relative
+				&::after
+					content: ''
+					position: absolute
+					left: 0
+					bottom: 0
+					display: inline-block
+					width: 100%
+					height: 1px
+					background: $dark
+					opacity: 0
+					transition: opacity .35s ease
 
 
 // ----------------------------------------------------
