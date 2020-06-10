@@ -299,6 +299,92 @@
 
 
 // ----------------------------------------------------
+// SECTION: Collection
+// ----------------------------------------------------
+.collection
+	&-item
+		overflow: hidden
+		height: 100%
+		margin-bottom: 30px
+	&-link
+		position: absolute
+		top: 0
+		left: 0
+		z-index: 1
+		width: 100%
+		height: 100%
+		&:hover
+			~ .collection-photo
+				&::after
+					visibility: visible
+					opacity: 1
+				.view-more
+					opacity: 1
+			~ .collection-meta .title > span::after
+				opacity: 1
+	&-photo
+		position: relative
+		overflow: hidden
+		width: 100%
+		height: 400px
+		&::after
+			content: ''
+			visibility: hidden
+			position: absolute
+			top: 0
+			left: 0
+			width: 100%
+			height: 100%
+			background: rgba($accent, 0.65)
+			opacity: 0
+			transition: .45s ease
+		+media-breakpoint-down(xl)
+			height: 340px
+		+media-breakpoint-down(lg)
+			height: 280px
+		+media-breakpoint-down(md)
+			height: 240px
+		+media-breakpoint-down(xs)
+			height: 320px
+		.view-more
+			position: absolute
+			top: 50%
+			left: 0
+			right: 0
+			z-index: 2
+			pointer-events: none
+			text-align: center
+			transform: translateY(-50%)
+			opacity: 0
+			transition: .45s ease
+			.link
+				color: $white
+		> img
+			width: 100%
+			height: 100%
+			object-fit: cover
+	&-meta
+		margin-top: 30px
+		+media-breakpoint-down(sm)
+			margin-top: 20px
+		.title
+			color: $textcolor
+			> span
+				position: relative
+				&::after
+					content: ''
+					position: absolute
+					left: 0
+					bottom: 0
+					display: inline-block
+					width: 100%
+					height: 1px
+					background: $dark
+					opacity: 0
+					transition: opacity .35s ease
+
+
+// ----------------------------------------------------
 // Card of goods
 // ----------------------------------------------------
 .card
@@ -361,6 +447,49 @@
 					background: $dark
 					opacity: 0
 					transition: opacity .35s ease
+
+
+// ----------------------------------------------------
+// SECTION: Services
+// ----------------------------------------------------
+.services
+	.row:nth-child(2)
+		margin-top: 30px
+	.section-head
+		text-align: left
+	.section-title
+		margin-bottom: 40px
+	&-wrap
+		padding: 30px 0
+	&-descr
+		> p
+			margin-bottom: 0
+	&-photo
+		height: 100%
+		> img
+			width: 100%
+			height: 100%
+			object-fit: cover
+	&-list
+		counter-reset: numeric-counter
+		> li
+			counter-increment: numeric-counter
+			position: relative
+			padding-left: 45px
+			margin-left: 10px
+			&:not(:last-child)
+				margin-bottom: 30px
+				+media-breakpoint-down(md)
+					margin-bottom: 20px
+			&::before
+				content: counter(numeric-counter) "."
+				position: absolute
+				top: 0
+				left: 0
+				color: $dark-blue
+				font-size: 24px
+				font-weight: 500
+				line-height: 1
 
 
 // ----------------------------------------------------
