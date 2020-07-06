@@ -113,6 +113,7 @@
 			&-link
 				display: inline-block
 				font-weight: 400
+				text-transform: lowercase
 				+media-breakpoint-down(md)
 					margin: 15px 0
 					font-size: 20px
@@ -569,12 +570,12 @@
 // SITE Footer
 // ----------------------------------------------------
 .footer
+	padding-top: 50px
+	padding-bottom: 50px
 	&-wrap
 		display: flex
 		align-items: center
 		justify-content: space-between
-		padding-top: 50px
-		padding-bottom: 50px
 		+media-breakpoint-down(md)
 			flex-wrap: wrap
 	&-logo
@@ -594,6 +595,7 @@
 			&-link
 				display: inline-block
 				font-weight: 400
+				text-transform: lowercase
 				&:not(:last-child)
 					margin-right: 50px
 					+media-breakpoint-down(lg)
@@ -635,6 +637,21 @@
 					padding: 5px 2px
 				&:hover
 					opacity: 0.25
+	&-bottom
+		margin-top: 50px
+		text-align: center
+		.change-location
+			display: inline-block
+			padding: 14px 16px 14px 40px
+			border-radius: 40px
+			border: 1px solid darken($light-gray, 5%)
+			background: url('../images/dest/globe.svg') no-repeat 16px center/16px
+			color: $dark-blue
+			font-size: 13px
+			font-weight: 400
+			transition: border .5s ease
+			&:hover
+				border-color: $dark-blue
 
 
 // ----------------------------------------------------
