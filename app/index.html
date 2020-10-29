@@ -315,7 +315,9 @@
 						<h4 class="contacts-title text-white text-md">Залишилися запитання? Залиште свої дані, і ми зв’яжемось з вами</h4>
 						<form action="#" class="form">
 							<input class="form-control" type="text" placeholder="Ваше ім'я" required>
-							<input class="form-control" type="tel" placeholder="Номер телефону" required>
+							<div class="form-group form-validate">
+								<input class="form-control" type="tel" id="contacts-phone" placeholder="Номер телефону" required>
+							</div>
 							<button class="form-submit btn btn-white" type="submit">Надіслати</button>
 						</form>
 					</div><!-- /.contacts-feeback -->
@@ -395,6 +397,53 @@
 
 	<script src="js/app.min.js"></script>
 	<script src="js/location-frontend.js"></script>
+	<script>
+		$('input[type="tel"]').each( function(index, element) {
+			// replace letters
+			$(this).bind('change keyup input click', function() {
+				if (this.value.match(/[^0-9+]/g)) {
+					this.value = this.value.replace(/[^0-9+]/g, '')
+				}
+			})
+
+			// initialise plugin
+			var iti = $(this).intlTelInput({
+				initialCountry: 'auto',
+				geoIpLookup: function(callback) {
+					$.get('https://ipinfo.io', function() {}, "jsonp").always(function(resp) {
+						var countryCode = (resp && resp.country) ? resp.country : 'ua';
+						callback(countryCode);
+					});
+				},
+				utilsScript: '../js/utils.js'
+			});
+
+			var reset = function() {
+				$(element).removeClass('error');
+			};
+
+			// on blur: validate
+			$(element).on('blur', function() {
+				reset();
+				if ($(this).intlTelInput("isValidNumber")) {
+					$(element).removeClass('error');
+				} else {
+					$(element).addClass('error');
+				}
+			});
+
+			// on keyup / change flag: reset
+			$(element).on('change keyup', reset);
+		})
+
+		$('form').on('submit', function(e) {
+			e.preventDefault();
+
+			if( ! $(this).find('.form-control.error').length ) {
+				$(this).submit();
+			}
+		})
+	</script>
 
 </body>
 </html>

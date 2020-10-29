@@ -14,6 +14,7 @@ let paths = {
 			'node_modules/bootstrap/js/dist/util.js', // Bootstrap Lib Util
 			'node_modules/bootstrap/js/dist/modal.js', // Bootstrap Modal
 			'node_modules/slick-carousel/slick/slick.min.js', // Slick Carousel
+			'node_modules/intl-tel-input/build/js/intlTelInput-jquery.min.js', // International Telephone Input
 			'node_modules/@fancyapps/fancybox/dist/jquery.fancybox.min.js', // Fancybox
 			'node_modules/readmore-js/readmore.min.js', // Read More lib
 			'node_modules/aos/dist/aos.js', // AOS (animation lib)
