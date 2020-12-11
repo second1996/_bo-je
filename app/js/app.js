@@ -98,7 +98,7 @@ $(document).ready(function() {
 			lessLink: false,
 			embedCSS: false,
 		})
-		$('.materials-text').readmore({
+		$('.materials-inner').readmore({
 			moreLink: $('#materials-more'),
 			lessLink: false,
 			embedCSS: false,
