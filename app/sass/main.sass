@@ -1061,7 +1061,7 @@
 		> li
 			&:not(:last-child)
 				margin-bottom: 10px
-			> span
+			> a
 				position: relative
 				&::after
 					content: ''
@@ -1072,14 +1072,14 @@
 					width: 100%
 					height: 1px
 					background: $dark
-					opacity: 0
-					transition: opacity .35s ease
+					transform: scaleX(0)
+					transition: .35s ease
 					+media-breakpoint-down(md)
 						display: none
 				&:hover
 					cursor: pointer
 					&::after
-						opacity: 1
+						transform: scaleX(1)
 
 
 // ----------------------------------------------------
