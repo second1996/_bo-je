@@ -21,22 +21,37 @@
 
 		<!--#include virtual="parts/header.html" -->
 
-		<main class="s-collection">
+		<div class="breadcrumbs">
+			<ul class="breadcrumbs-list" data-aos="cut-right">
+				<li><a href="index.html">Головна</a></li>
+				<li><span>Каталог</span></li>
+			</ul>
+		</div>
+
+		<main class="s-catalog">
 			
-			<section class="c-heroes">
-				<div class="c-heroes-header" data-aos="fade-in" data-aos-delay="350">
-					<h1 class="c-heroes-title text-xxl w-light">Каталог</h1>
+			<section class="s-catalog-heroes">
+				<div class="s-catalog-heroes-header" data-aos="fade-in">
+					<h1 class="s-catalog-heroes-title text-xxl w-semibold">Каталог</h1>
 				</div>
 			</section>
 
-			<section class="c-goods pt-150" id="s-goods">
-				<div class="section-head">
-					<h3 class="section-title text-dark text-xl w-light" data-aos="fade-in">Продукція колекції <span class="w-medium">Kant</span></h3>
-				</div><!-- /.section-head -->
-				<div class="row">
+			<section class="s-catalog-main">
+				<div class="s-catalog-categories" data-aos="cut-right">
+					<ul>
+						<li class="_current"><a href="#">Всі товари</a></li>
+						<li><a href="#">Обідні столи</a></li>
+						<li><a href="#">Придиванні столики</a></li>
+						<li><a href="#">Ліжка</a></li>
+						<li><a href="#">Крісла та лави</a></li>
+						<li><a href="#">Стелажі</a></li>
+						<li><a href="#">Шафи</a></li>
+					</ul>
+				</div>
+				<div class="s-catalog-list row">
 					<div class="col-sm-6 col-xl-3">
-						<div class="card" data-aos-delay="0" data-aos="fade-in">
-							<a href="#" class="card-link" data-toggle="modal" data-target="#productModal1"></a>
+						<div class="card" data-aos="fade-in">
+							<a href="page-product.html" class="card-link"></a>
 							<div class="card-photo">
 								<img class="normal-photo" src="images/dest/table-big-01.jpg" alt="Triangle leg table">
 								<img class="scaled-photo" src="images/src/table-big-02.jpg" alt="Triangle leg table">
@@ -48,8 +63,8 @@
 						</div>
 					</div><!-- /.col -->
 					<div class="col-sm-6 col-xl-3">
-						<div class="card" data-aos-delay="150" data-aos="fade-in">
-							<a href="#" class="card-link" data-toggle="modal" data-target="#productModal2"></a>
+						<div class="card" data-aos="fade-in">
+							<a href="page-product.html" class="card-link"></a>
 							<div class="card-photo">
 								<img class="normal-photo" src="images/dest/table-kant-01.png" alt="Triangle leg table">
 								<img class="scaled-photo" src="images/dest/table-kant-01.png" alt="Triangle leg table">
@@ -61,8 +76,8 @@
 						</div>
 					</div><!-- /.col -->
 					<div class="col-sm-6 col-xl-3">
-						<div class="card" data-aos-delay="300" data-aos="fade-in" >
-							<a href="#" class="card-link" data-toggle="modal" data-target="#productModal4"></a>
+						<div class="card" data-aos="fade-in" >
+							<a href="page-product.html" class="card-link"></a>
 							<div class="card-photo">
 								<img class="normal-photo" src="images/dest/stellazh-02.jpg" alt="Triangle leg table">
 								<img class="scaled-photo" src="images/dest/stellazh-01.jpg" alt="Triangle leg table">
@@ -74,8 +89,60 @@
 						</div>
 					</div><!-- /.col -->
 					<div class="col-sm-6 col-xl-3">
-						<div class="card" data-aos-delay="450" data-aos="fade-in">
-							<a href="#" class="card-link" data-toggle="modal" data-target="#productModal3"></a>
+						<div class="card" data-aos="fade-in">
+							<a href="page-product.html" class="card-link"></a>
+							<div class="card-photo">
+								<img class="normal-photo" src="https://images.demandware.net/dw/image/v2/BBBV_PRD/on/demandware.static/-/Sites-master-catalog/default/dw5a6a1ccc/images/500000/508837.jpg?sw=2000" alt="Triangle leg table">
+								<img class="scaled-photo" src="https://images.demandware.net/dw/image/v2/BBBV_PRD/on/demandware.static/-/Sites-master-catalog/default/dw012bbded/images/500000/508842.jpg?sw=2000" alt="Triangle leg table">
+							</div>
+							<div class="card-meta">
+								<h3 class="title text-xs w-regular"><span>Triangle leg table</span></h3>
+								<div class="price text-xxs">від 15 000 грн</div>
+							</div>
+						</div>
+					</div><!-- /.col -->
+					<div class="col-sm-6 col-xl-3">
+						<div class="card" data-aos="fade-in">
+							<a href="page-product.html" class="card-link"></a>
+							<div class="card-photo">
+								<img class="normal-photo" src="images/dest/table-big-01.jpg" alt="Triangle leg table">
+								<img class="scaled-photo" src="images/src/table-big-02.jpg" alt="Triangle leg table">
+							</div>
+							<div class="card-meta">
+								<h3 class="title text-xs w-regular"><span>Стіл Table big Kant</span></h3>
+								<div class="price text-xxs">від 15 000 грн</div>
+							</div>
+						</div>
+					</div><!-- /.col -->
+					<div class="col-sm-6 col-xl-3">
+						<div class="card" data-aos="fade-in">
+							<a href="page-product.html" class="card-link"></a>
+							<div class="card-photo">
+								<img class="normal-photo" src="images/dest/table-kant-01.png" alt="Triangle leg table">
+								<img class="scaled-photo" src="images/dest/table-kant-01.png" alt="Triangle leg table">
+							</div>
+							<div class="card-meta">
+								<h3 class="title text-xs w-regular"><span>Придиванний столик Kant</span></h3>
+								<div class="price text-xxs">від 15 000 грн</div>
+							</div>
+						</div>
+					</div><!-- /.col -->
+					<div class="col-sm-6 col-xl-3">
+						<div class="card" data-aos="fade-in" >
+							<a href="page-product.html" class="card-link"></a>
+							<div class="card-photo">
+								<img class="normal-photo" src="images/dest/stellazh-02.jpg" alt="Triangle leg table">
+								<img class="scaled-photo" src="images/dest/stellazh-01.jpg" alt="Triangle leg table">
+							</div>
+							<div class="card-meta">
+								<h3 class="title text-xs w-regular"><span>Стелажі з колекції Rund</span></h3>
+								<div class="price text-xxs">від 15 000 грн</div>
+							</div>
+						</div>
+					</div><!-- /.col -->
+					<div class="col-sm-6 col-xl-3">
+						<div class="card" data-aos="fade-in">
+							<a href="page-product.html" class="card-link"></a>
 							<div class="card-photo">
 								<img class="normal-photo" src="https://images.demandware.net/dw/image/v2/BBBV_PRD/on/demandware.static/-/Sites-master-catalog/default/dw5a6a1ccc/images/500000/508837.jpg?sw=2000" alt="Triangle leg table">
 								<img class="scaled-photo" src="https://images.demandware.net/dw/image/v2/BBBV_PRD/on/demandware.static/-/Sites-master-catalog/default/dw012bbded/images/500000/508842.jpg?sw=2000" alt="Triangle leg table">
@@ -87,6 +154,9 @@
 						</div>
 					</div><!-- /.col -->
 				</div><!-- /.row -->
+				<div class="s-catalog-show-more" data-aos="fade-up">
+					<a href="#" class="btn btn-gray">Показати більше</a>
+				</div>
 			</section>
 
 		</main>

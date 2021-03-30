@@ -1,0 +1,53 @@
+// ----------------------------------------------------
+// PAGE: Catalog
+// ----------------------------------------------------
+.s-catalog
+	&-heroes
+		text-align: center
+	&-main
+		margin-top: 45px
+	&-categories
+		margin-bottom: 60px
+		> ul
+			display: flex
+			flex-wrap: wrap
+			justify-content: center
+			margin: -6px -12px
+			+media-breakpoint-down(md)
+				margin: -4px
+			> li
+				padding: 6px 12px
+				+media-breakpoint-down(md)
+					padding: 4px
+				&._current > a
+					pointer-events: none
+					background-color: $light-gray
+					font-weight: 500
+					&::after
+						display: none
+				> a
+					display: inline-block
+					padding: 12px 22px
+					font-size: 18px
+					font-weight: 400
+					text-transform: lowercase
+					+media-breakpoint-down(md)
+						font-size: 16px
+					&::after
+						content: ''
+						position: absolute
+						left: 0
+						bottom: 0
+						display: inline-block
+						width: 100%
+						height: 1px
+						background: $dark
+						opacity: 0
+						transition: opacity .35s ease
+						+media-breakpoint-down(md)
+							display: none
+					&:hover::after
+						opacity: 1
+	&-show-more
+		margin-top: 45px
+		text-align: center

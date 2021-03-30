@@ -1,0 +1,31 @@
+// ----------------------------------------------------
+// Page breadcrumbs
+// ----------------------------------------------------
+.breadcrumbs
+	margin-top: 8px
+	margin-bottom: 50px
+	+media-breakpoint-down(md)
+		margin-bottom: 40px
+	&-list
+		display: inline-flex
+		flex-wrap: wrap
+		align-items: center
+		> li
+			display: inline-block
+			&:not(:last-child)::after
+				content: '/'
+				display: inline-block
+				vertical-align: middle
+				margin: 0 12px
+			> a
+				color: $dark-blue
+				transition: color .35s ease
+				&:hover
+					color: rgba($dark-blue, 0.5)
+			> span
+				color: #D1D2D4
+			> a,
+			> span
+				font-size: 14px
+				font-weight: 500
+				text-transform: lowercase
