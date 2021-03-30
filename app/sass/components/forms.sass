@@ -1,0 +1,47 @@
+// ----------------------------------------------------
+// Forms
+// ----------------------------------------------------
+.form
+	&-dark
+		.form-control
+			border-color: #000
+			color: $textcolor
+			&::placeholder
+				color: #d1d2d4
+	&-group
+		position: relative
+		margin-bottom: 20px
+	&-control
+		width: 100%
+		height: 50px
+		margin-bottom: 20px
+		padding: 0 25px
+		border-radius: 0
+		border: 1px solid $white
+		background: $trsp
+		line-height: 50px
+		color: $white
+		font-size: 14px
+		transition: .35s ease
+		&.error
+			border-color: red
+		&:focus
+			background: $white
+			color: $textcolor
+			&::placeholder
+				color: $textcolor
+	&-submit
+		margin-top: 10px
+
+	// Validation customize
+	&-validate
+		.iti
+			width: 100%
+			&__selected-flag
+				outline: none !important
+	&-validate-note
+		color: red
+		font-size: 14px
+		font-weight: 500
+		&.hide
+			display: none

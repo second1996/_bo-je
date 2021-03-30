@@ -1,5 +1,6 @@
-// USER VARIABLES SECTION
-
+// ----------------------------------------------------
+// Variables
+// ----------------------------------------------------
 $accent: #d5c4b4
 $dark: #2e3532
 $dark-blue: #242d36
@@ -11,33 +12,27 @@ $textcolor: #000
 $system: -apple-system, BlinkMacSystemFont, Arial, sans-serif
 $font: 'Montserrat', sans-serif
 
+
+// ----------------------------------------------------
+// Bootstrap configs
+// ----------------------------------------------------
 // Bootstrap compatible gutter variable => $gutter
 $grid-breakpoints: (xxs: 0, xs: 375px, sm: 576px, md: 768px, lg: 992px, xl: 1200px, xxl: 1440px)
 $container-max-widths: (xxl: 1380px)
 $grid-gutter-width: 20px
 $gutter: $grid-gutter-width
 
-@function max($numbers...)
-	@return m#{a}x(#{$numbers})
 
-@function min($numbers...)
-	@return m#{i}n(#{$numbers})
-
-// IMPORT SECTION
-
-@import 'node_modules/bootstrap/scss/bootstrap-reboot.scss' // Bootstrap Reboot collection
+// ----------------------------------------------------
+// Other imports
+// ----------------------------------------------------
+@import 'node_modules/bootstrap/scss/bootstrap-reboot.scss' // Bootstrap Reboot
 @import 'node_modules/bootstrap/scss/mixins/_breakpoints.scss' // Bootstrap Breakpoints mixin
-@import 'node_modules/bootstrap/scss/bootstrap-grid.scss' // Optional Bootstrap Grid
-@import 'node_modules/bootstrap/scss/utilities/_sizing.scss' // Optional Bootstrap Utilites
-@import 'node_modules/bootstrap/scss/_transitions.scss' // Fade transition for modal
-@import 'node_modules/bootstrap/scss/_modal.scss' // Bootstrap Modal
-@import 'node_modules/slick-carousel/slick/slick.scss' // Slick Carousel
-@import 'node_modules/@fancyapps/fancybox/dist/jquery.fancybox' // Fancybox
-@import 'node_modules/intl-tel-input/build/css/intlTelInput.min' // International Telephone Input
-@import 'node_modules/aos/dist/aos' // AOS (animation lib)
 
-// FONTS LOAD SECTION
 
+// ----------------------------------------------------
+// Fonts load
+// ----------------------------------------------------
 @mixin font($fname, $fstyle, $fweight, $furl)
 	@font-face
 		font-family: $fname
@@ -52,8 +47,9 @@ $gutter: $grid-gutter-width
 // @include font('Roboto', italic, 700, '../fonts/roboto-bolditalic-webfont.woff2')
 
 
-// GENERAL DOCUMENT STYLES
-
+// ----------------------------------------------------
+// General documents styles
+// ----------------------------------------------------
 ::placeholder
 	color: $white
 	opacity: $light-gray
@@ -109,291 +105,3 @@ a
 	&:hover
 		color: $dark
 		text-decoration: none
-
-// International Telephone Input
-.iti__flag
-	background-image: url('../images/flags.png')
-@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi)
-	.iti__flag
-		background-image: url('../images/flags@2x.png')
-
-.container
-	padding-left: 30px
-	padding-right: 30px
-	+media-breakpoint-down(md)
-		padding-left: 15px
-		padding-right: 15px
-
-
-// Section customize
-.section
-	&-head
-		text-align: center
-		.section-title
-			margin-bottom: 75px
-			+media-breakpoint-down(xl)
-				margin-bottom: 60px
-			+media-breakpoint-down(lg)
-				margin-bottom: 45px
-	&-suptitle
-		margin-bottom: 10px
-	&-title
-		margin-bottom: 30px
-		line-height: 1.3
-		+media-breakpoint-down(lg)
-			margin-bottom: 40px
-		+media-breakpoint-down(md)
-			margin-bottom: 30px
-
-
-// Spacings
-.mb-20
-	margin-bottom: 20px
-
-.pt-150
-	padding-top: 150px
-	+media-breakpoint-down(lg)
-		padding-top: 100px
-	+media-breakpoint-down(md)
-		padding-top: 75px
-.pt-100
-	padding-top: 100px
-	+media-breakpoint-down(lg)
-		padding-top: 50px
-.mt-150
-	margin-top: 150px
-	+media-breakpoint-down(lg)
-		margin-top: 100px
-	+media-breakpoint-down(md)
-		margin-top: 75px
-
-
-// Text helpers
-.text-accent
-	color: $accent
-.text-dark
-	color: $dark
-.text-white
-	color: $white
-
-.text-xxs
-	font-size: 14px
-.text-xs
-	font-size: 16px
-.text-sm
-	font-size: 18px
-	+media-breakpoint-down(md)
-		font-size: 16px
-.text-md
-	font-size: 24px
-	+media-breakpoint-down(md)
-		font-size: 20px
-.text-lg
-	font-size: 36px
-	+media-breakpoint-down(xl)
-		font-size: 32px
-	+media-breakpoint-down(lg)
-		font-size: 28px
-	+media-breakpoint-down(md)
-		font-size: 24px
-.text-xl
-	font-size: 40px
-	+media-breakpoint-down(xl)
-		font-size: 36px
-	+media-breakpoint-down(lg)
-		font-size: 32px
-	+media-breakpoint-down(md)
-		font-size: 28px
-.text-xxl
-	font-size: 48px
-	+media-breakpoint-down(xl)
-		font-size: 44px
-	+media-breakpoint-down(lg)
-		font-size: 40px
-	+media-breakpoint-down(md)
-		font-size: 36px
-	+media-breakpoint-down(sm)
-		font-size: 32px
-
-
-.w-light
-	font-weight: 300
-.w-regular
-	font-weight: 400
-.w-medium
-	font-weight: 500
-.w-semibold
-	font-weight: 600
-
-
-// Site buttons
-.btn
-	display: inline-block
-	width: 100%
-	max-width: 210px
-	height: 50px
-	border: 0
-	font-size: 15px
-	font-weight: 500
-	line-height: 50px
-	text-align: center
-	transition: .35s ease
-	&:active
-		transform: translateY(2px)
-	&:hover
-		box-shadow: 0 5px 15px rgba(0,0,0, 0.15)
-	&-primary
-		background-color: $accent
-		color: $white
-		&:hover
-			color: $white
-			background-color: darken($accent, 7%)
-	&-white
-		background-color: $white
-		color: $textcolor
-		&:hover
-			color: $textcolor
-	&-dark
-		background-color: $dark-blue
-		color: $white
-		&:hover
-			background-color: lighten($dark-blue, 5%)
-			color: $white
-
-// Link with arrow
-.link
-	position: relative
-	display: inline-block
-	padding-right: 30px
-	color: $dark
-	font-weight: 500
-	transition: opacity .35s ease
-	&::after
-		content: ''
-		position: absolute
-		top: 50%
-		right: 0
-		transform: translateY(-50%)
-		display: inline-block
-		width: 20px
-		height: 8px
-		background: url('../images/dest/arrow.svg') no-repeat center/cover
-		transition: transform .35s ease
-	&:hover
-		cursor: pointer
-		opacity: 0.65
-		&::after
-			transform: translate(5px, -50%)
-	&-white
-		&::after
-			background-image: url('../images/dest/arrow-white.svg')
-	&-more
-		margin-top: 15px
-		&::after
-			display: none
-
-
-// Read more
-.read-more
-	+media-breakpoint-down(md)
-		overflow: hidden
-		position: relative
-		max-height: 200px
-		transition: height .45s ease
-		&::after
-			content: ''
-			visibility: visible
-			position: absolute
-			bottom: 0
-			left: 0
-			right: 0
-			height: 30px
-			background: linear-gradient(to top, rgba(255,255,255, 1), rgba(255,255,255, 0))
-			transition: .35s ease
-
-
-// Form customize
-.form
-	&-dark
-		.form-control
-			border-color: #000
-			color: $textcolor
-			&::placeholder
-				color: #d1d2d4
-	&-group
-		position: relative
-		margin-bottom: 20px
-	&-control
-		width: 100%
-		height: 50px
-		margin-bottom: 20px
-		padding: 0 25px
-		border-radius: 0
-		border: 1px solid $white
-		background: $trsp
-		line-height: 50px
-		color: $white
-		font-size: 14px
-		transition: .35s ease
-		&.error
-			border-color: red
-		&:focus
-			background: $white
-			color: $textcolor
-			&::placeholder
-				color: $textcolor
-	&-submit
-		margin-top: 10px
-
-	// Validation customize
-	&-validate
-		.iti
-			width: 100%
-			&__selected-flag
-				outline: none !important
-	&-validate-note
-		color: red
-		font-size: 14px
-		font-weight: 500
-		&.hide
-			display: none
-
-
-// Animation
-@keyframes pulse
-	0%
-		box-shadow: 0 0 0 0 rgba($white, 0.75)
-	70%
-		box-shadow: 0 0 0 25px rgba($accent, 0)
-	100%
-		box-shadow: 0 0 0 0 rgba($accent, 0)
-@keyframes cut
-	0%
-		transform: scaleX(1)
-	100%
-		transform: scaleX(0)
-
-[data-aos]
-	position: relative
-[data-aos^="cut-left"][data-aos^="cut-left"],
-[data-aos^="cut-right"][data-aos^="cut-right"],
-	&::after
-		content: ''
-		position: absolute
-		top: 0
-		left: 0
-		right: 0
-		bottom: 0
-		display: block
-		background: $white
-		transform: scaleX(1)
-		transition-property: transform
-		transition-duration: 1.25s
-		transition-delay: 0.25s
-	&.aos-animate::after
-		transform: scaleX(0)
-
-[data-aos^="cut-left"]::after
-	transform-origin: left center
-[data-aos^="cut-right"]::after
-	transform-origin: right center

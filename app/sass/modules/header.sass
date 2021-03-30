@@ -1,0 +1,162 @@
+// ----------------------------------------------------
+// SITE Header
+// ----------------------------------------------------
+.header
+	display: flex
+	align-items: center
+	justify-content: space-between
+	padding-top: 50px
+	padding-bottom: 50px
+	+media-breakpoint-down(md)
+		padding-top: 30px
+		padding-bottom: 30px
+	+media-breakpoint-down(xs)
+		align-items: flex-start
+	&-logo
+		position: relative
+		z-index: 20
+		img
+			height: 50px
+			+media-breakpoint-down(xs)
+				height: 40px
+		+media-breakpoint-down(md)
+			order: 0
+	&-hamburger
+		height: 24px
+		&-icon
+			position: relative
+			z-index: 20
+			outline: none
+			height: 100%
+			padding: 0 18px
+			border-radius: 0
+			border: 0
+			background: $trsp
+			&.is-toggled
+				span:nth-child(1)
+					transform: rotate(-45deg)
+					width: 86%
+				span:nth-child(2)
+					width: 0
+					opacity: 0
+				span:nth-child(3)
+					width: 86%
+					transform: rotate(45deg)
+			span
+				position: absolute
+				left: 0
+				right: 0
+				display: block
+				width: 100%
+				height: 2px
+				background: $dark
+				transform-origin: right
+				will-change: transform
+				transition: .35s ease
+				&:nth-child(1)
+					top: 0
+				&:nth-child(2)
+					top: 50%
+					left: auto
+					width: 70%
+					margin-top: -1px
+				&:nth-child(3)
+					bottom: 0
+	&-menu
+		display: flex
+		flex: 1 1 auto
+		+media-breakpoint-down(md)
+			pointer-events: none
+			visibility: hidden
+			position: fixed
+			top: 0
+			left: 0
+			right: 0
+			bottom: 0
+			z-index: 19
+			display: flex
+			flex-direction: column
+			background: rgba($white, 0.975)
+			width: 100%
+			height: 100%
+			transform: scale(0.9)
+			opacity: 0
+			transition: .35s ease
+		&.is-open
+			pointer-events: auto
+			visibility: visible
+			transform: scale(1)
+			opacity: 1
+		&-wrap
+			display: flex
+			flex: 1 1 auto
+			align-items: center
+			justify-content: space-between
+			+media-breakpoint-down(md)
+				overflow-y: auto
+				display: block
+				width: 100%
+				height: 100%
+				margin-top: 100px
+				padding-bottom: 60px
+	&-nav
+		margin-left: 100px
+		+media-breakpoint-down(md)
+			margin-left: 0
+		.menu
+			+media-breakpoint-down(md)
+				display: flex
+				flex-direction: column
+				text-align: center
+			&-link
+				display: inline-block
+				font-weight: 400
+				text-transform: lowercase
+				+media-breakpoint-down(md)
+					margin: 15px 0
+					font-size: 20px
+					&:hover
+						color: $accent
+				&:not(:last-child)
+					margin-right: 70px
+					+media-breakpoint-down(lg)
+						margin-right: 40px
+					+media-breakpoint-down(md)
+						margin-right: 0
+				&::after
+					content: ''
+					position: absolute
+					left: 0
+					bottom: 0
+					display: inline-block
+					width: 100%
+					height: 1px
+					background: $dark
+					opacity: 0
+					transition: opacity .35s ease
+					+media-breakpoint-down(md)
+						display: none
+				&:hover::after
+					opacity: 1
+	&-social
+		+media-breakpoint-down(md)
+			margin-top: 45px
+			.social
+				justify-content: center
+		.social
+			display: flex
+			align-items: center
+			&-item
+				&:not(:first-child)
+					margin-left: 60px
+					+media-breakpoint-down(xs)
+						margin-left: 30px
+			&-link
+				display: inline-block
+				padding: 0 2px
+				opacity: 0.25
+				transition: .35s ease
+				+media-breakpoint-down(xs)
+					padding: 5px 2px
+				&:hover
+					opacity: 1

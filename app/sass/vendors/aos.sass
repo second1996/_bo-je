@@ -1,0 +1,33 @@
+// ----------------------------------------------------
+// AOS imports
+// ----------------------------------------------------
+@import 'node_modules/aos/dist/aos' // AOS (animation lib)
+
+
+// ----------------------------------------------------
+// AOS configs
+// ----------------------------------------------------
+[data-aos]
+	position: relative
+[data-aos^="cut-left"][data-aos^="cut-left"],
+[data-aos^="cut-right"][data-aos^="cut-right"],
+	&::after
+		content: ''
+		position: absolute
+		top: 0
+		left: 0
+		right: 0
+		bottom: 0
+		display: block
+		background: $white
+		transform: scaleX(1)
+		transition-property: transform
+		transition-duration: 1.25s
+		transition-delay: 0.25s
+	&.aos-animate::after
+		transform: scaleX(0)
+
+[data-aos^="cut-left"]::after
+	transform-origin: left center
+[data-aos^="cut-right"]::after
+	transform-origin: right center

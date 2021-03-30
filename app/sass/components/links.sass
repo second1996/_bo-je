@@ -1,0 +1,33 @@
+// ----------------------------------------------------
+// Links
+// ----------------------------------------------------
+.link
+	position: relative
+	display: inline-block
+	padding-right: 30px
+	color: $dark
+	font-weight: 500
+	transition: opacity .35s ease
+	&::after
+		content: ''
+		position: absolute
+		top: 50%
+		right: 0
+		transform: translateY(-50%)
+		display: inline-block
+		width: 20px
+		height: 8px
+		background: url('../images/dest/arrow.svg') no-repeat center/cover
+		transition: transform .35s ease
+	&:hover
+		cursor: pointer
+		opacity: 0.65
+		&::after
+			transform: translate(5px, -50%)
+	&-white
+		&::after
+			background-image: url('../images/dest/arrow-white.svg')
+	&-more
+		margin-top: 15px
+		&::after
+			display: none

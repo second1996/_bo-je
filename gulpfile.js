@@ -55,6 +55,7 @@ const styl         = require('gulp-stylus');
 const cleancss     = require('gulp-clean-css');
 const concat       = require('gulp-concat');
 const browserSync  = require('browser-sync').create();
+const bssi         = require('browsersync-ssi');
 const uglify       = require('gulp-uglify-es').default;
 const autoprefixer = require('gulp-autoprefixer');
 const imagemin     = require('gulp-imagemin');
@@ -64,9 +65,14 @@ const del          = require('del');
 
 function browsersync() {
 	browserSync.init({
-		server: { baseDir: baseDir + '/' },
+		server: {
+			baseDir: baseDir + '/',
+			middleware: bssi({ baseDir: 'app/', ext: '.html' })
+		},
+		ghostMode: { clicks: false },
 		notify: false,
-		online: online
+		online: true,
+		// tunnel: 'bo-je', // Attempt to use the URL https://bo-je.loca.lt
 	})
 }
 

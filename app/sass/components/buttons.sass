@@ -1,0 +1,56 @@
+// ----------------------------------------------------
+// Buttons
+// ----------------------------------------------------
+.btn
+	display: inline-block
+	width: 100%
+	max-width: 210px
+	height: 50px
+	border: 0
+	font-size: 15px
+	font-weight: 500
+	line-height: 50px
+	text-align: center
+	transition: .35s ease
+	&:active
+		transform: translateY(2px)
+	&:hover
+		box-shadow: 0 5px 15px rgba(0,0,0, 0.15)
+	&-primary
+		background-color: $accent
+		color: $white
+		&:hover
+			color: $white
+			background-color: darken($accent, 7%)
+	&-white
+		background-color: $white
+		color: $textcolor
+		&:hover
+			color: $textcolor
+	&-dark
+		background-color: $dark-blue
+		color: $white
+		&:hover
+			background-color: lighten($dark-blue, 5%)
+			color: $white
+
+
+// ----------------------------------------------------
+// Read more button
+// ----------------------------------------------------
+.read-more
+	+media-breakpoint-down(md)
+		overflow: hidden
+		position: relative
+		max-height: 200px
+		transition: height .45s ease
+		&::after
+			content: ''
+			visibility: visible
+			position: absolute
+			bottom: 0
+			left: 0
+			right: 0
+			height: 30px
+			background: linear-gradient(to top, rgba(255,255,255, 1), rgba(255,255,255, 0))
+			transition: .35s ease

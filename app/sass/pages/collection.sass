@@ -1,0 +1,55 @@
+// ----------------------------------------------------
+// PAGE: Collection
+// ----------------------------------------------------
+.s-collection
+	padding: 100px 0
+	+media-breakpoint-down(lg)
+		padding: 75px 0
+	+media-breakpoint-down(md)
+		padding: 50px 0
+	.c-heroes
+		&-title
+			margin-bottom: 100px
+			font-weight: 500
+			text-align: center
+			text-transform: uppercase
+			+media-breakpoint-down(xl)
+				margin-bottom: 50px
+		&-descr
+			max-width: 820px
+			margin: 0 auto 100px
+			text-align: center
+			+media-breakpoint-down(lg)
+				margin-bottom: 75px
+			+media-breakpoint-down(md)
+				margin-bottom: 50px
+		&-images
+			display: flex
+			width: 100%
+			+media-breakpoint-down(sm)
+				flex-wrap: wrap
+			.image
+				height: 490px
+				+media-breakpoint-down(lg)
+					height: 420px
+				+media-breakpoint-down(md)
+					height: 360px
+				+media-breakpoint-down(sm)
+					height: 320px
+				+media-breakpoint-down(xs)
+					height: 280px
+				&:nth-child(1)
+					width: 40%
+					margin-right: 20px
+					+media-breakpoint-down(sm)
+						width: 100%
+						margin-right: 0
+						margin-bottom: 20px
+				&:nth-child(2)
+					width: 60%
+					+media-breakpoint-down(sm)
+						width: 100%
+				> img
+					width: 100%
+					height: 100%
+					object-fit: cover

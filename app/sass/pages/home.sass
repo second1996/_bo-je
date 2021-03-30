@@ -1,0 +1,416 @@
+// ----------------------------------------------------
+// SECTION: Heroes
+// ----------------------------------------------------
+.heroes
+	+media-breakpoint-down(sm)
+		text-align: center
+	&-title
+		margin-bottom: 40px
+		color: $dark
+		text-transform: uppercase
+		+media-breakpoint-down(md)
+			margin-bottom: 20px
+		+media-breakpoint-down(sm)
+			padding-top: 30px
+	&-descr
+		margin-bottom: 50px
+		+media-breakpoint-down(md)
+			margin-bottom: 30px
+	&-images
+		display: flex
+		.item
+			position: relative
+			transform-origin: left center
+			transition: transform .35s ease
+			&:not(:first-child)
+				margin-left: 40px
+				+media-breakpoint-down(md)
+					margin-left: 20px
+			&:nth-child(2)
+				margin-top: 45px
+
+
+// ----------------------------------------------------
+// SECTION: Advantages
+// ----------------------------------------------------
+.advantages
+	+media-breakpoint-down(sm)
+		padding-top: 100px
+	+media-breakpoint-down(xs)
+		[class*="col-"]
+			&:not(:first-child)
+				margin-top: 50px
+	&-item
+		text-align: center
+		.icon
+			margin-bottom: 40px
+			+media-breakpoint-down(xs)
+				margin-bottom: 20px
+			img
+				width: 100px
+				height: 100px
+				+media-breakpoint-down(lg)
+					width: 80px
+					height: 80px
+		.title
+			margin-bottom: 0
+
+
+// ----------------------------------------------------
+// SECTION: About
+// ----------------------------------------------------
+.about
+	&-photo
+		+media-breakpoint-down(lg)
+			margin-right: 20px
+		+media-breakpoint-down(md)
+			max-width: 400px
+			margin-bottom: 30px
+		+media-breakpoint-down(sm)
+			margin-right: 0
+	&-text
+		+media-breakpoint-down(xs)
+			max-height: 160px
+
+
+// ----------------------------------------------------
+// SECTION: Handmade
+// ----------------------------------------------------
+.handmade
+	overflow: hidden
+	&-content
+		padding-right: 100px
+		+media-breakpoint-down(md)
+			padding-right: 30px
+	&-photo
+		height: 400px
+		text-align: right
+		+media-breakpoint-down(md)
+			height: 300px
+		> img
+			width: 100%
+			height: 100%
+			object-fit: cover
+	&-big-photo
+		margin-top: 15px
+
+
+// ----------------------------------------------------
+// SECTION: Materials
+// ----------------------------------------------------
+.materials
+	overflow: hidden
+
+
+// ----------------------------------------------------
+// SECTION: Presentation
+// ----------------------------------------------------
+.presentation
+	&-wrap
+		position: relative
+		height: 750px
+		+media-breakpoint-down(xl)
+			height: 600px
+		+media-breakpoint-down(lg)
+			height: 450px
+		+media-breakpoint-down(md)
+			height: 350px
+	&-btn
+		position: absolute
+		top: 50%
+		left: 50%
+		transform: translate(-50%, -50%)
+		.play
+			outline: none
+			display: flex
+			align-items: center
+			justify-content: center
+			width: 125px
+			height: 125px
+			padding-top: 15px
+			padding-left: 20px
+			background-color: rgba($white, 0.15)
+			border-radius: 50%
+			transition: background-color .35s ease
+			animation: pulse 2s infinite
+			+media-breakpoint-down(md)
+				width: 100px
+				height: 100px
+			> img
+				will-change: transform
+				transition: transform .35s ease
+			&:hover
+				background-color: $accent
+				> img
+					transform: scale(0.9)
+	&-preview
+		width: 100%
+		height: 100%
+		object-fit: cover
+
+
+// ----------------------------------------------------
+// SECTION: Collection
+// ----------------------------------------------------
+.collection
+	&-item
+		overflow: hidden
+		height: 100%
+		margin-bottom: 30px
+	&-link
+		position: absolute
+		top: 0
+		left: 0
+		z-index: 1
+		width: 100%
+		height: 100%
+		&:hover
+			~ .collection-photo
+				&::after
+					visibility: visible
+					opacity: 1
+				.view-more
+					opacity: 1
+			~ .collection-meta .title > span::after
+				opacity: 1
+	&-photo
+		position: relative
+		overflow: hidden
+		width: 100%
+		height: 400px
+		&::after
+			content: ''
+			visibility: hidden
+			position: absolute
+			top: 0
+			left: 0
+			width: 100%
+			height: 100%
+			background: rgba($accent, 0.65)
+			opacity: 0
+			transition: .45s ease
+		+media-breakpoint-down(xl)
+			height: 340px
+		+media-breakpoint-down(lg)
+			height: 280px
+		+media-breakpoint-down(md)
+			height: 240px
+		+media-breakpoint-down(xs)
+			height: 320px
+		.view-more
+			position: absolute
+			top: 50%
+			left: 0
+			right: 0
+			z-index: 2
+			pointer-events: none
+			text-align: center
+			transform: translateY(-50%)
+			opacity: 0
+			transition: .45s ease
+			.link
+				color: $white
+		> img
+			width: 100%
+			height: 100%
+			object-fit: cover
+	&-meta
+		margin-top: 30px
+		+media-breakpoint-down(sm)
+			margin-top: 20px
+		.title
+			color: $textcolor
+			> span
+				position: relative
+				&::after
+					content: ''
+					position: absolute
+					left: 0
+					bottom: 0
+					display: inline-block
+					width: 100%
+					height: 1px
+					background: $dark
+					opacity: 0
+					transition: opacity .35s ease
+
+
+// ----------------------------------------------------
+// SECTION: Services
+// ----------------------------------------------------
+.services
+	.row:not(:first-child)
+		margin-top: 30px
+	.section-head
+		text-align: left
+	.section-title
+		margin-bottom: 40px
+	&-wrap
+		padding: 30px 0
+	&-descr
+		> p
+			margin-bottom: 0
+	&-photo
+		height: 100%
+		> img
+			width: 100%
+			height: 100%
+			object-fit: cover
+	&-list
+		counter-reset: numeric-counter
+		> li
+			counter-increment: numeric-counter
+			position: relative
+			padding-left: 45px
+			margin-left: 10px
+			&:not(:last-child)
+				margin-bottom: 30px
+				+media-breakpoint-down(md)
+					margin-bottom: 20px
+			&::before
+				content: counter(numeric-counter) "."
+				position: absolute
+				top: 0
+				left: 0
+				color: $dark-blue
+				font-size: 24px
+				font-weight: 500
+				line-height: 1
+	&-form
+		display: flex
+		align-items: center
+		justify-content: space-between
+		padding: 25px 6vw
+		background: $light-gray
+		+media-breakpoint-down(sm)
+			flex-direction: column
+		.title
+			margin-bottom: 0
+			padding-right: 15px
+			+media-breakpoint-down(sm)
+				margin-bottom: 20px
+				padding-right: 0
+				line-height: 1.4
+				text-align: center
+
+
+// ----------------------------------------------------
+// SECTION: Gallery
+// ----------------------------------------------------
+.gallery
+	&-wrap
+		display: flex
+		flex-wrap: wrap
+		margin: 0 -10px
+	&-item
+		overflow: hidden
+		width: 100%
+		height: 325px
+		margin-bottom: 20px
+		padding: 0 10px
+		+media-breakpoint-down(lg)
+			height: 250px
+		&:nth-child(1)
+			flex-basis: 35%
+		&:nth-child(2)
+			flex-basis: 25%
+		&:nth-child(3)
+			flex-basis: 40%
+		&:nth-child(4)
+			flex-basis: 25%
+		&:nth-child(5)
+			flex-basis: 50%
+		&:nth-child(6)
+			flex-basis: 25%
+		+media-breakpoint-down(sm)
+			&:nth-child(1)
+				flex-basis: 40%
+			&:nth-child(2)
+				flex-basis: 60%
+			&:nth-child(3)
+				flex-basis: 60%
+			&:nth-child(4)
+				flex-basis: 40%
+			&:nth-child(5)
+				flex-basis: 40%
+			&:nth-child(6)
+				flex-basis: 60%
+		+media-breakpoint-down(xs)
+			&:nth-child(even),
+			&:nth-child(odd)
+				flex-basis: 100%
+		> img
+			width: 100%
+			height: 100%
+			object-fit: cover
+	&-btn
+		margin-top: 40px
+		text-align: center
+
+
+// ----------------------------------------------------
+// SECTION: Contacts
+// ----------------------------------------------------
+.contacts
+	position: relative
+	z-index: 1
+	padding: 75px 0
+	&::before,
+	&::after
+		content: ''
+		position: absolute
+		top: 0
+		bottom: 0
+		z-index: -1
+		width: 50%
+		+media-breakpoint-down(sm)
+			width: 100%
+	&::before
+		left: 0
+		background-color: $accent
+		+media-breakpoint-down(sm)
+			top: 0
+			height: 52%
+	&::after
+		right: 0
+		background-color: $light-gray
+		+media-breakpoint-down(sm)
+			top: auto
+			bottom: 0
+			height: 48%
+	&-title
+		margin-bottom: 50px
+		+media-breakpoint-down(sm)
+			margin-bottom: 30px
+	&-feeback,
+	&-info
+		max-width: 440px
+		width: 100%
+		+media-breakpoint-down(md)
+			max-width: 340px
+		+media-breakpoint-down(sm)
+			max-width: 100%
+	&-info
+		margin-left: auto
+		+media-breakpoint-down(sm)
+			padding-top: 100px
+			position: relative
+			top: 30px
+	&-meta
+		margin-top: 5px
+		margin-bottom: 25px
+		a
+			font-weight: 500
+			&::after
+				content: ''
+				position: absolute
+				left: 0
+				bottom: 0
+				display: inline-block
+				width: 100%
+				height: 1px
+				background: $dark
+				opacity: 0
+				transition: opacity .35s ease
+			&:hover::after
+				opacity: 1

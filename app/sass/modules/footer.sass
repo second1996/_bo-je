@@ -1,0 +1,126 @@
+// ----------------------------------------------------
+// SITE Footer
+// ----------------------------------------------------
+.footer
+	padding-top: 50px
+	padding-bottom: 50px
+	&-wrap
+		display: flex
+		align-items: center
+		justify-content: space-between
+		+media-breakpoint-down(md)
+			flex-wrap: wrap
+			justify-content: center
+	&-logo
+		img
+			height: 50px
+			+media-breakpoint-down(xs)
+				height: 40px
+		+media-breakpoint-down(md)
+			order: 1
+			flex: 0 0 100%
+			margin-bottom: 25px
+			text-align: center
+	&-nav
+		+media-breakpoint-down(md)
+			order: 0
+			flex: 1 1 100%
+			margin-bottom: 50px
+			text-align: center
+		.menu
+			&-link
+				display: inline-block
+				font-weight: 400
+				text-transform: lowercase
+				&:not(:last-child)
+					margin-right: 50px
+					+media-breakpoint-down(lg)
+						margin-right: 40px
+					+media-breakpoint-down(md)
+						margin-right: 15px
+				+media-breakpoint-down(md)
+					margin: 10px 15px
+				&::after
+					content: ''
+					position: absolute
+					left: 0
+					bottom: 0
+					display: inline-block
+					width: 100%
+					height: 1px
+					background: $dark
+					opacity: 0
+					transition: opacity .35s ease
+				&:hover::after
+					opacity: 1
+	&-social
+		+media-breakpoint-down(md)
+			order: 2
+		.social
+			display: flex
+			align-items: center
+			&-item
+				&:not(:first-child)
+					margin-left: 50px
+					+media-breakpoint-down(xs)
+						margin-left: 30px
+			&-link
+				display: inline-block
+				padding: 0 2px
+				opacity: 1
+				transition: .35s ease
+				+media-breakpoint-down(xs)
+					padding: 5px 2px
+				&:hover
+					opacity: 0.25
+	&-bottom
+		margin-top: 30px
+		text-align: center
+		+media-breakpoint-down(md)
+			margin-top: 50px
+		.change-location
+			display: inline-block
+			margin-bottom: 30px
+			padding: 14px 16px 14px 40px
+			border-radius: 40px
+			border: 1px solid darken($light-gray, 5%)
+			background: url('../images/dest/globe.svg') no-repeat 16px center/16px
+			color: $dark-blue
+			font-size: 13px
+			font-weight: 400
+			transition: border .5s ease
+			&:hover
+				border-color: $dark-blue
+			+media-breakpoint-down(md)
+				margin-bottom: 10px
+		.menu
+			display: flex
+			flex-wrap: wrap
+			justify-content: center
+			&-link
+				display: inline-block
+				color: rgba($dark, 0.5)
+				font-size: 14px
+				font-weight: 400
+				text-transform: lowercase
+				&:not(:last-child)
+					margin-right: 50px
+					+media-breakpoint-down(lg)
+						margin-right: 40px
+					+media-breakpoint-down(md)
+						margin-right: 15px
+				+media-breakpoint-down(md)
+					margin: 10px 15px
+				&::after
+					content: ''
+					position: absolute
+					left: 0
+					bottom: 0
+					display: inline-block
+					width: 100%
+					height: 1px
+					background: rgba($dark, 0.5)
+					opacity: 0
+					transition: opacity .35s ease
+				&:hover::after
+					opacity: 1
