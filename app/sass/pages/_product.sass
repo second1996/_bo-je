@@ -79,17 +79,24 @@
 		&-slider
 			overflow: hidden
 			width: 100%
-			height: auto
 			.slide
 				position: relative
 				outline: none
-				> img
+				height: 460px
+				+media-breakpoint-down(md)
+					height: 360px
+				+media-breakpoint-down(xs)
+					height: 300px
+				a
+					outline: none
+				img
 					width: 100%
 					height: 100%
 					object-fit: contain
 
 		// Thumbs slider
 		&-thumb-slider
+			margin-top: 10px
 			.slide
 				cursor: pointer
 				outline: none
