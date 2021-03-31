@@ -29,7 +29,6 @@ $(document).ready(function() {
 	 * Modal Product Slick Carousel
 	 */
 	$('.product-slider').each(function(key, item) {
-
 		var sliderIdName = 'slider' + key
 		var sliderNavIdName = 'sliderNav' + key
 	
@@ -56,7 +55,10 @@ $(document).ready(function() {
 			focusOnSelect: true,
 		})
 
+		// Refresh AOS positions
+		AOS.refresh();
 	})
+
 
 	/**
 	 * Anchor smooth scroll link
