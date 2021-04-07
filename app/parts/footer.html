@@ -89,7 +89,17 @@
 	</footer>
 
 	<script src="js/app.min.js"></script>
+
+	<script src="https://unpkg.com/@popperjs/core@2"></script>
+	<script src="https://unpkg.com/tippy.js@6"></script>
+	<script>
+		tippy('[data-tippy]', {
+			followCursor: 'horizontal'
+		});
+	</script>
+
 	<!-- <script src="js/location-frontend.js"></script> -->
+
 	<script>
 		$('input[type="tel"]').each( function(index, element) {
 			// replace letters
