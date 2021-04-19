@@ -25,6 +25,7 @@ $(document).ready(function() {
 		productThumbSlider.slick('refresh')
 	})
 
+
 	/**
 	 * Modal Product Slick Carousel
 	 */
@@ -71,6 +72,7 @@ $(document).ready(function() {
 		return false;
 	})
 
+
 	/**
 	 * Hamburger & Mobile menu
 	 */
@@ -91,6 +93,7 @@ $(document).ready(function() {
 		})
 	}
 
+
 	/**
 	 * Read More for About & Materials section
 	 */
@@ -106,5 +109,38 @@ $(document).ready(function() {
 			embedCSS: false,
 		})
 	}
+
+
+	/**
+	 * Go up button
+	 */
+	var go_up_btn = $('#go-up-button')
+
+	$(window).on('scroll load', function() {
+		if ($(window).scrollTop() > 1000) {
+			go_up_btn.addClass('_is-shown')
+		} else {
+			go_up_btn.removeClass('_is-shown')
+		}
+	})
+
+	go_up_btn.on('click', function(e) {
+		e.preventDefault()
+		$('html, body').animate({scrollTop:0}, 1000)
+	})
+
+
+	/**
+	 * Go up button
+	 */
+	var fixed_header = $('.header')
+
+	$(window).on('scroll load', function() {
+		if ($(window).scrollTop() > 250) {
+			fixed_header.addClass('_is-sticky')
+		} else {
+			fixed_header.removeClass('_is-sticky')
+		}
+	})
 
 })

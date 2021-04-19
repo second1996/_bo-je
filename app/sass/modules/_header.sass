@@ -2,16 +2,28 @@
 // SITE Header
 // ----------------------------------------------------
 .header
-	display: flex
-	align-items: center
-	justify-content: space-between
-	padding-top: 50px
-	padding-bottom: 50px
-	+media-breakpoint-down(md)
-		padding-top: 30px
-		padding-bottom: 30px
-	+media-breakpoint-down(xs)
-		align-items: flex-start
+	position: fixed
+	top: 0
+	left: 0
+	right: 0
+	z-index: 900
+	background-color: $white
+	&._is-sticky
+		.header-inner
+			padding-top: 20px
+			padding-bottom: 20px
+	&-inner
+		display: flex
+		align-items: center
+		justify-content: space-between
+		padding-top: 50px
+		padding-bottom: 50px
+		transition: .35s ease
+		+media-breakpoint-down(md)
+			padding-top: 30px
+			padding-bottom: 30px
+		+media-breakpoint-down(xs)
+			align-items: flex-start
 	&-logo
 		position: relative
 		z-index: 20

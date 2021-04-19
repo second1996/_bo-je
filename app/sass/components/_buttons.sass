@@ -60,3 +60,36 @@
 			height: 30px
 			background: linear-gradient(to top, rgba(255,255,255, 1), rgba(255,255,255, 0))
 			transition: .35s ease
+
+
+// ----------------------------------------------------
+// Go up button
+// ----------------------------------------------------
+.go-up
+	position: fixed
+	right: 32px
+	z-index: 100
+	visibility: hidden
+	opacity: 0
+	transition: .35s ease
+	&._is-shown
+		visibility: visible
+		opacity: 1
+	.btn
+		display: flex
+		align-items: center
+		justify-content: center
+		width: 48px
+		height: 48px
+		border-radius: 50%
+		color: $dark
+		&:hover
+			background-color: $dark-blue
+			color: $white
+		.icon
+			width: 1em
+			height: 1em
+			fill: currentColor
+			stroke: currentColor
+			transform-origin: center
+			transform: scaleY(-1)
