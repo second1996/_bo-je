@@ -71,17 +71,19 @@ body
 	overflow-x: hidden
 	position: relative
 	min-width: 320px
-	padding-top: 150px // fixed header
 	color: $textcolor
 	font-family: $font
 	font-size: $fontsize
 	font-weight: 300
 	line-height: 1.65
-	+media-breakpoint-down(md)
-		padding-top: 110px // fixed header
 	+media-breakpoint-down(xs)
-		padding-top: 100px // fixed header
 		font-size: 15px
+	&:not(.error404)
+		padding-top: 150px // fixed header
+		+media-breakpoint-down(md)
+			padding-top: 110px // fixed header
+		+media-breakpoint-down(xs)
+			padding-top: 100px // fixed header
 	&.compensate-for-scrollbar .header
 		right: 17px
 		+media-breakpoint-down(lg)
