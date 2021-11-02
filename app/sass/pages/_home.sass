@@ -300,6 +300,63 @@
 
 
 // ----------------------------------------------------
+// SECTION: Testimonials
+// ----------------------------------------------------
+.testimonials
+	&-slider
+		padding-left: 60px
+		margin-bottom: 60px
+		+media-breakpoint-down(xs)
+			padding-left: 0
+			margin-bottom: 0
+			&.slick-slider
+				.slick-dots
+					position: static
+	&-item
+		padding-right: 60px
+		+media-breakpoint-down(xs)
+			padding-right: 0
+		&-header
+			.t-name
+				color: $dark
+				font-size: 24px
+				font-weight: 500
+				+media-breakpoint-down(sm)
+					font-size: 20px
+			.t-location
+				color: $accent
+				font-weight: 500
+		&-body
+			overflow: hidden
+			position: relative
+			max-height: 104px
+			margin-top: 24px
+			transition: height .45s ease
+			&[data-readmore]
+				&::after
+					content: ''
+					visibility: visible
+					position: absolute
+					bottom: 0
+					left: 0
+					right: 0
+					height: 30px
+					background: linear-gradient(to top, rgba(255,255,255, 1), rgba(255,255,255, 0))
+					transition: .35s ease
+				&[aria-expanded="true"]::after
+					display: none
+				~ .link-more
+					display: inline-block
+			> p:last-child
+				margin-bottom: 0
+			~ .link-more
+				display: none
+				margin-top: 12px
+				+media-breakpoint-down(xs)
+					margin-top: 0
+
+
+// ----------------------------------------------------
 // SECTION: Gallery
 // ----------------------------------------------------
 .gallery

@@ -2,3 +2,76 @@
 // Slick imports
 // ----------------------------------------------------
 @import 'node_modules/slick-carousel/slick/slick.scss'
+
+
+// ----------------------------------------------------
+// Slick customize
+// ----------------------------------------------------
+.slick-slider
+	.slide
+		outline: none
+
+	// Slick arrows
+	.slick-arrow
+		position: absolute
+		z-index: 9
+		top: 0
+		width: 50px
+		height: 100%
+		padding: 10px
+		border-radius: 0
+		border: 0
+		background-color: $trsp
+		background-image: url('../images/dest/slider-arrow.svg')
+		background-repeat: no-repeat
+		background-size: 14px
+		background-position: center
+		font-size: 0
+		transform-origin: center
+		transition: .35s ease
+		&:hover
+			background-color: rgba(0,0,0, 0.02)
+			+media-breakpoint-down(md)
+				background-color: $trsp
+	.slick-prev
+		left: 0
+	.slick-next
+		right: 0
+		transform: rotate(180deg)
+	.slick-disabled
+		opacity: 0
+		pointer-events: none
+	&.is-hide
+		visibility: hidden
+		display: none
+
+	// Slick dots
+	.slick-dots
+		position: absolute
+		left: 0
+		right: 0
+		display: flex
+		flex-wrap: wrap
+		align-items: center
+		justify-content: center
+		margin: 30px auto 0
+		+media-breakpoint-down(md)
+			margin-top: 15px
+		> li
+			margin: 0 6px
+			&.slick-active
+				pointer-events: none
+				> button
+					background-color: $accent
+			&:hover:not(.slick-active) > button
+				background-color: rgba($dark, .5)
+			> button
+				display: inline-block
+				width: 8px
+				height: 8px
+				padding: 0
+				border-radius: 50%
+				border: 0
+				background-color: $light-gray
+				font-size: 0
+				transition: background-color .3s ease

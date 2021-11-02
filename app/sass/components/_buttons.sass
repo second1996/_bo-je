@@ -42,6 +42,48 @@
 
 
 // ----------------------------------------------------
+// Burger icon
+// ----------------------------------------------------
+.btn-burger
+	position: relative
+	height: 100%
+	padding: 0 18px
+	border-radius: 0
+	border: 0
+	background: $trsp
+	outline: none
+	&.is-toggled
+		span:nth-child(1)
+			transform: rotate(-45deg)
+			width: 86%
+		span:nth-child(2)
+			width: 0
+			opacity: 0
+		span:nth-child(3)
+			width: 86%
+			transform: rotate(45deg)
+	span
+		position: absolute
+		left: 0
+		right: 0
+		display: block
+		width: 100%
+		height: 1px
+		background: $dark
+		transform-origin: right
+		will-change: transform
+		transition: .35s ease
+		&:nth-child(1)
+			top: 0
+		&:nth-child(2)
+			top: 50%
+			left: auto
+			width: 70%
+		&:nth-child(3)
+			bottom: 0
+
+
+// ----------------------------------------------------
 // Read more button
 // ----------------------------------------------------
 .read-more

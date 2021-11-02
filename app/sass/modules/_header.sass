@@ -34,91 +34,91 @@
 		+media-breakpoint-down(md)
 			order: 0
 	&-hamburger
+		align-items: center
 		height: 24px
 		&-icon
-			position: relative
 			z-index: 20
-			outline: none
-			height: 100%
-			padding: 0 18px
-			border-radius: 0
-			border: 0
-			background: $trsp
-			&.is-toggled
-				span:nth-child(1)
-					transform: rotate(-45deg)
-					width: 86%
-				span:nth-child(2)
-					width: 0
-					opacity: 0
-				span:nth-child(3)
-					width: 86%
-					transform: rotate(45deg)
-			span
-				position: absolute
-				left: 0
-				right: 0
-				display: block
-				width: 100%
-				height: 2px
-				background: $dark
-				transform-origin: right
-				will-change: transform
-				transition: .35s ease
-				&:nth-child(1)
-					top: 0
-				&:nth-child(2)
-					top: 50%
-					left: auto
-					width: 70%
-					margin-top: -1px
-				&:nth-child(3)
-					bottom: 0
 	&-menu
 		display: flex
 		flex: 1 1 auto
 		+media-breakpoint-down(md)
-			pointer-events: none
-			visibility: hidden
-			position: fixed
-			top: 0
-			left: 0
-			right: 0
-			bottom: 0
-			z-index: 19
-			display: flex
-			flex-direction: column
-			background: rgba($white, 0.975)
-			width: 100%
-			height: 100%
-			transform: scale(0.9)
-			opacity: 0
-			transition: .35s ease
-		&.is-open
-			pointer-events: auto
-			visibility: visible
-			transform: scale(1)
-			opacity: 1
+			display: none
 		&-wrap
 			display: flex
 			flex: 1 1 auto
 			align-items: center
 			justify-content: space-between
-			+media-breakpoint-down(md)
-				overflow-y: auto
-				display: block
-				width: 100%
-				height: 100%
-				margin-top: 100px
-				padding-bottom: 60px
 	&-nav
-		margin-left: 80px
+		display: flex
+		align-items: center
+		margin-left: 60px
 		+media-breakpoint-down(xl)
-			margin-left: 60px
-		+media-breakpoint-down(lg)
 			margin-left: 40px
+		+media-breakpoint-down(lg)
+			margin-left: 30px
 		+media-breakpoint-down(md)
-			margin-left: 0
+			display: none
+
+		// Burger menu
+		.burger-menu
+			position: relative
+			margin-right: 60px
+			+media-breakpoint-down(xl)
+				margin-right: 40px
+			+media-breakpoint-down(lg)
+					margin-right: 30px
+			&-icon
+				display: flex
+				align-items: center
+				height: 24px
+				.btn-burger
+					span:nth-child(2)
+						left: 0
+			&-list
+				pointer-events: none
+				position: absolute
+				top: 100%
+				left: 6px
+				z-index: 99
+				width: 232px
+				padding: 30px
+				margin: 20px -30px -30px
+				border-radius: 3px
+				box-shadow: 0 6px 30px rgba(0,0,0, 0.08)
+				background-color: $white
+				visibility: hidden
+				opacity: 0
+				transform: translateY(20px)
+				transition: .4s ease
+				> li
+					padding-top: 0
+					padding-bottom: 0
+					&:not(:last-child)
+						margin-right: 0
+						margin-bottom: 16px
+					> a
+						font-weight: 400
+						text-transform: lowercase
+						&::after
+							content: ''
+							position: absolute
+							left: 0
+							bottom: 0
+							display: inline-block
+							width: 100%
+							height: 1px
+							background: $dark
+							opacity: 0
+							transition: opacity .35s ease
+						&:hover::after
+							opacity: 1
+				&.is-open
+					pointer-events: auto
+					visibility: visible
+					opacity: 1
+					transform: none
+
+		// Main menu
 		.menu
 			&-list
 				display: flex
@@ -130,23 +130,16 @@
 				padding-top: 6px
 				padding-bottom: 6px
 				&:not(:last-child)
-					margin-right: 70px
+					margin-right: 60px
 					+media-breakpoint-down(xl)
-						margin-right: 60px
+						margin-right: 40px
 					+media-breakpoint-down(lg)
 						margin-right: 30px
-					+media-breakpoint-down(md)
-						margin-right: 0
 			&-link
 				display: inline-block
 				font-weight: 400
 				text-transform: lowercase
 				transition: color .3s ease
-				+media-breakpoint-down(md)
-					margin: 15px 0
-					font-size: 20px
-					&:hover
-						color: $accent
 				&::after
 					content: ''
 					position: absolute
@@ -158,8 +151,6 @@
 					background: $dark
 					opacity: 0
 					transition: opacity .35s ease
-					+media-breakpoint-down(md)
-						display: none
 				&:hover::after
 					opacity: 1
 			&-dropdown
@@ -173,9 +164,6 @@
 				> a
 					padding-right: 20px
 					background: url('../images/dest/dropdown-arrow.svg') no-repeat center right / 10px
-					+media-breakpoint-down(md)
-						padding-right: 0
-						background: none
 				> ul
 					pointer-events: none
 					position: absolute
@@ -185,15 +173,12 @@
 					width: 240px
 					padding: 16px
 					margin: 0 -16px -16px
-					border-radius: 4px
-					// box-shadow: 0 20px 10px rgba(0,0,0, 0.05)
+					border-radius: 3px
 					background-color: $light-gray
 					visibility: hidden
 					opacity: 0
 					transform: translateY(20px)
 					transition: .4s ease
-					+media-breakpoint-down(md)
-						display: none
 					> li
 						&:not(:last-child)
 							margin-bottom: 6px
@@ -211,15 +196,11 @@
 								background: $dark
 								opacity: 0
 								transition: opacity .35s ease
-								+media-breakpoint-down(md)
-									display: none
 							&:hover::after
 								opacity: 1
 	&-social
 		+media-breakpoint-down(md)
-			margin-top: 45px
-			.social
-				justify-content: center
+			display: none
 		.social
 			display: flex
 			align-items: center
