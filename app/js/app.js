@@ -64,6 +64,20 @@ document.addEventListener("DOMContentLoaded", function () {
 	/**
 	 * Testimonials slider
 	 */
+	if (window.matchMedia('(min-width: 992px)').matches) {
+		$('.testimonials-slider').on('init', function (event, slick) {
+			// Read more button
+			$('.testimonials-item-body').each(function (index, el) {
+				$(this).readmore({
+					moreLink: $('#testimonial-readmore-' + index),
+					lessLink: false,
+					embedCSS: false,
+					collapsedHeight: 104,
+				})
+			})
+		})
+	}
+
 	$('.testimonials-slider').slick({
 		slidesToShow: 2,
 		slidesToScroll: 2,
@@ -88,18 +102,6 @@ document.addEventListener("DOMContentLoaded", function () {
 				}
 			},
 		],
-	})
-
-	// Read more button
-	$('.testimonials-item-body').each(function (index, el) {
-		$(this).readmore({
-			moreLink: $('#testimonial-readmore-' + index),
-			lessLink: false,
-			embedCSS: false,
-			afterToggle: function () {
-				$('.testimonials-slider').slick('refresh')
-			}
-		})
 	})
 
 
