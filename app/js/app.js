@@ -57,7 +57,7 @@ document.addEventListener("DOMContentLoaded", function () {
 		})
 
 		// Refresh AOS positions
-		AOS.refresh();
+		AOS.refresh()
 	})
 
 
@@ -75,6 +75,9 @@ document.addEventListener("DOMContentLoaded", function () {
 					collapsedHeight: 104,
 				})
 			})
+
+			// Refresh AOS positions
+			AOS.refresh()
 		})
 	}
 
